@@ -1,0 +1,5 @@
+FROM postgres:alpine
+
+ENV POSTGRES_DB todo_db
+ENV POSTGRES_USER admin
+ENV POSTGRES_PASSWORD password
