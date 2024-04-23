@@ -1,7 +1,9 @@
-Dockerized Three-Tier Application
+**Dockerized Three-Tier Application**
+
 Welcome to our Dockerized three-tier application setup guide! In this repository, you'll find everything you need to deploy a fully containerized application consisting of a frontend, backend, and database tier using Docker and Docker Compose.
 
-Table of Contents
+**Table of Contents**
+
 Getting Started
 Prerequisites
 Installation
@@ -12,13 +14,18 @@ Backend
 Database
 Docker Compose
 Contributing
-Getting Started
+
+**Getting Started**
+
 Follow these steps to set up the three-tier application on your local machine:
 
-Prerequisites
+**Prerequisites**
+
 Docker installed on your system (Get Docker)
 Docker Compose installed on your system (Get Docker Compose)
-Installation
+
+**Installation**
+
 Clone this repository to your local machine:
 bash
 Copy code
@@ -35,13 +42,17 @@ docker-compose up
 Access the application in your web browser:
 Frontend: http://localhost:3000
 Backend: http://localhost:4000
-Application Structure
+
+**Application Structure**
+
 Our three-tier application is structured as follows:
 
-Frontend: React.js application encapsulated within a Docker container.
-Backend: Node.js application serving as the backend logic, also encapsulated within a Docker container.
-Database: PostgreSQL database running in its own Docker container.
-Docker Configuration
+**Frontend:** React.js application encapsulated within a Docker container.
+**Backend:** Node.js application serving as the backend logic, also encapsulated within a Docker container.
+**Database:** PostgreSQL database running in its own Docker container.
+
+**Docker Configuration**
+
 Frontend
 The frontend Dockerfile is located in the frontend directory. It builds the frontend image and exposes port 3000.
 
@@ -59,6 +70,7 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
 Backend
 The backend Dockerfile is located in the backend directory. It builds the backend image and exposes port 4000. The backend service depends on the database service.
 
@@ -115,6 +127,7 @@ services:
       POSTGRES_DB: todo_db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
-Contributing
+      
+**Contributing**
 Contributions are welcome! If you have suggestions, improvements, or new features to propose, feel free to open an issue or submit a pull request.
 
