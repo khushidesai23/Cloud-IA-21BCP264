@@ -15,12 +15,11 @@ function App() {
     <div className="App">
       <h1>Docker Compose Practical</h1>
       <ul>
-      <li>Complete Docker tutorial 21BCP264</li>
-          <li>Write a blog post about setting up Docker containers</li>
-        {/* {todos.map(todo => (
-          // <li key={todo.id}>{todo.text}</li>
+      
+         {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
           
-        ))} */}
+        ))} 
       </ul>
     </div>
   );
