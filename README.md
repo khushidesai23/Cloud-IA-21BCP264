@@ -173,7 +173,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
 ```
-yaml Copy code version: ‘3’ services: frontend: build: context: ./frontend dockerfile: Dockerfile ports: - “3000:3000” backend: build: context: ./backend dockerfile: Dockerfile ports: - “4000:4000” depends_on: - db db: build: context: . dockerfile: Dockerfile environment: POSTGRES_DB: todo_db POSTGRES_USER: admin POSTGRES_PASSWORD: password This Docker Compose file orchestrates the setup of multiple Docker containers for a three-tier application:
+yaml
+version: ‘3’ services: frontend: build: context: ./frontend dockerfile: Dockerfile ports: - “3000:3000” backend: build: context: ./backend dockerfile: Dockerfile ports: - “4000:4000” depends_on: - db db: build: context: . dockerfile: Dockerfile environment: POSTGRES_DB: todo_db POSTGRES_USER: admin POSTGRES_PASSWORD: password This Docker Compose file orchestrates the setup of multiple Docker containers for a three-tier application:
 
 frontend: Defines a service for the frontend of the application. It builds the frontend Docker image using the Dockerfile located in the ./frontend directory. It also maps port 3000 on the host machine to port 3000 in the container, allowing access to the frontend application.
 
