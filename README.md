@@ -173,6 +173,14 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
 ```
+yaml Copy code version: ‘3’ services: frontend: build: context: ./frontend dockerfile: Dockerfile ports: - “3000:3000” backend: build: context: ./backend dockerfile: Dockerfile ports: - “4000:4000” depends_on: - db db: build: context: . dockerfile: Dockerfile environment: POSTGRES_DB: todo_db POSTGRES_USER: admin POSTGRES_PASSWORD: password This Docker Compose file orchestrates the setup of multiple Docker containers for a three-tier application:
+
+frontend: Defines a service for the frontend of the application. It builds the frontend Docker image using the Dockerfile located in the ./frontend directory. It also maps port 3000 on the host machine to port 3000 in the container, allowing access to the frontend application.
+
+backend: Defines a service for the backend of the application. Similar to the frontend, it builds the backend Docker image using the Dockerfile located in the ./backend directory. It maps port 4000 on the host machine to port 4000 in the container. Additionally, it specifies that this service depends on the db service.
+
+db: Defines a service for the database tier of the application. It builds the PostgreSQL Docker image using the Dockerfile located in the root directory (where the Docker Compose file is). It sets environment variables POSTGRES_DB, POSTGRES_USER, and POSTGRES_PASSWORD to configure the PostgreSQL database.
+
 ## Contributing
 Contributions are welcome! If you have suggestions, improvements, or new features to propose, feel free to open an issue or submit a pull request.
 
